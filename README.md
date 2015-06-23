@@ -10,14 +10,12 @@
 
 ```
 [sudo] npm install -g yo
-
 ```
 
 然后安装本脚手架
 
 ```
 [sodu] npm install -g generator-page
-
 ```
 
 ## 快速开始
@@ -37,7 +35,6 @@ yo page
 在某一模块下新增一个页面，**进入到该模块**下，执行
 
 ```
-
 yo page:page pageName
 ```
 
