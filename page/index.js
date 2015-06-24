@@ -36,7 +36,11 @@ module.exports = yeoman.generators.Base.extend({
     this.pageConf = {};
     this.pkg = require('../package.json');
     var pwd = this.destinationPath();
-    this.forlderName = pwd.substr(pwd.lastIndexOf('/') + 1);
+    if (pwd.indexOf('/') >= 0) {
+      this.forlderName = pwd.substr(pwd.lastIndexOf('/') + 1);
+    } else {
+      this.forlderName = pwd.substr(pwd.lastIndexOf('\\') + 1);
+    }
     this.isExistFile = this._getExistFileResult(this.pageName);
   },
 
