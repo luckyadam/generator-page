@@ -35,7 +35,7 @@ module.exports = yeoman.generators.Base.extend({
     this.log('need help? go and open issue: https://github.com/luckyadam/generator-page/issues/new');
     this.pageConf = {};
     this.pkg = require('../package.json');
-    var pwd = process.env.PWD;
+    var pwd = this.destinationPath();
     this.forlderName = pwd.substr(pwd.lastIndexOf('/') + 1);
     this.isExistFile = this._getExistFileResult(this.pageName);
   },
