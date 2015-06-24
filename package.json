@@ -1,6 +1,6 @@
 {
   "name": "generator-page",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "拍拍无线页面构建脚手架",
   "main": "index.js",
   "scripts": {
