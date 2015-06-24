@@ -1,4 +1,5 @@
 # generator-page
+[![npm version](https://badge.fury.io/js/generator-page.svg)](http://badge.fury.io/js/generator-page)
 
 > 拍拍无线页面构建脚手架，根据现有项目结构，生成相应目录和代码
 
