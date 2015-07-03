@@ -31,6 +31,11 @@ module.exports = yeoman.generators.Base.extend({
       default: this.user.git.name() || process.env.USER,
       store: true
     }, {
+      type: 'confirm',
+      name: 'isTencent',
+      message: '是否腾讯域下',
+      default: true
+    }, {
       type: 'input',
       name: 'appName',
       message: '告诉我项目名称吧~',
@@ -77,6 +82,11 @@ module.exports = yeoman.generators.Base.extend({
       this.pageConf.date = ((new Date()).getFullYear()) + '-' + ((new Date()).getMonth() + 1) + '-' + ((new Date()).getDate());
       this.pageConf.modClassName = this._.classify(this.pageConf.modName);
       this.pageConf.modName = _.decapitalize(this.pageConf.modClassName);
+      if (this.pageConf.isTencent) {
+        this.pageConf.secondaryDomain = 'static';
+      } else {
+        this.pageConf.secondaryDomain = 's';
+      }
       done();
     }.bind(this));
   },

@@ -69,6 +69,12 @@ module.exports = yeoman.generators.Base.extend({
       store: true
     });
     prompts.push({
+      type: 'confirm',
+      name: 'isTencent',
+      message: '是否腾讯域下',
+      default: true
+    });
+    prompts.push({
       type: 'input',
       name: 'appName',
       message: '告诉我项目名称吧~',
@@ -87,6 +93,11 @@ module.exports = yeoman.generators.Base.extend({
       this.pageConf.modClassName = this._.classify(this.pageConf.modName);
       this.pageConf.modName = _.decapitalize(this.pageConf.modClassName);
       this.pageConf.pageName = this.pageConf.pageName || this.pageName;
+      if (this.pageConf.isTencent) {
+        this.pageConf.secondaryDomain = 'static';
+      } else {
+        this.pageConf.secondaryDomain = 's';
+      }
       done();
     }.bind(this));
   },
